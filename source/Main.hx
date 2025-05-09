@@ -88,7 +88,7 @@ class Main extends Sprite
 		bitmapFPS.smoothing = true;
 		#end
 
-		game = new FlxGame(gameWidth, gameHeight, initialState, framerate, framerate, skipSplash, startFullscreen);
+		game = new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen);
 		addChild(game);
 
 		#if !mobile
