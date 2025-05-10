@@ -1240,26 +1240,6 @@ class NPSDisplayOption extends Option
 	}
 }
 
-class ReplayOption extends Option
-{
-	public function new(desc:String)
-	{
-		super();
-		description = desc;
-	}
-
-	public override function press():Bool
-	{
-		FlxG.switchState(new LoadReplayState());
-		return false;
-	}
-
-	private override function updateDisplay():String
-	{
-		return "Load replays";
-	}
-}
-
 class AccuracyDOption extends Option
 {
 	public function new(desc:String)
