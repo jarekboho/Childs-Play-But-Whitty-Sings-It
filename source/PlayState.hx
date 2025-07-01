@@ -308,7 +308,7 @@ class PlayState extends MusicBeatState
 
 		iconRPC = 'whitty';
 
-			detailsText = "";
+		detailsText = "";
 
 		detailsPausedText = "Paused - " + detailsText;
 
