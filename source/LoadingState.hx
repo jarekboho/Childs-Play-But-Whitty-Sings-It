@@ -55,8 +55,9 @@ class LoadingState extends MusicBeatState
 			var introComplete = callbacks.add("introComplete");
 			checkLoadSong(getSongPath());
 			if (PlayState.SONG.needsVoices)
-				checkLoadSong(getVocalPath());
+			checkLoadSong(getVocalPath());
 			checkLibrary("shared");
+			checkLibrary("bonusWeek");
 
 			var fadeTime = 0.5;
 			FlxG.camera.fade(FlxG.camera.bgColor, fadeTime, true);
