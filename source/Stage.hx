@@ -37,8 +37,8 @@ class Stage extends MusicBeatState
 			return;
 
           	camZoom = 0.9;
-            curStage = 'whitty';
-            wBg = new FlxSprite(-500, -300).loadGraphic(Paths.image('whittyBack', 'bonusWeek'));
+              curStage = 'whitty';
+              wBg = new FlxSprite(-500, -300).loadGraphic(Paths.image('whittyBack', 'bonusWeek'));
               wBg.antialiasing = true;
               wBg.scrollFactor.set(0.9, 0.9);
               wBg.active = false;
