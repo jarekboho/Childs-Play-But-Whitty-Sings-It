@@ -247,7 +247,7 @@ class PlayState extends MusicBeatState
 
 	var touhouBG:FlxSprite;
 
-    var glowfnf:FlxRuntimeShader;
+	var glowfnf:FlxRuntimeShader;
 
 	var camTween:FlxTween;
 
