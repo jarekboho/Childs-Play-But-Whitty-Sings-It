@@ -207,11 +207,7 @@ class PlayState extends MusicBeatState
 
 	public static var theFunne:Bool = true;
 
-	var funneEffect:FlxSprite;
-
 	var camPos:FlxPoint;
-
-	public var randomVar = false;
 
 	public static var Stage:Stage;
 
