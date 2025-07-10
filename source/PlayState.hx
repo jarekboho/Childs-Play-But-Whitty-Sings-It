@@ -463,6 +463,11 @@ class PlayState extends MusicBeatState
 				if (FlxG.save.data.distractions)
 				add(whittyanimation);
 
+				touhouBG = new FlxSprite(-FlxG.width * FlxG.camera.zoom, -FlxG.height * FlxG.camera.zoom).makeGraphic(FlxG.width * 3, FlxG.height * 3, FlxColor.BLACK);
+				touhouBG.scrollFactor.set();
+				addBehindGF(touhouBG);
+				touhouBG.alpha = 0.00001;
+
 		if (FlxG.save.data.distractions)
 		{
 		gf.visible = false;
@@ -726,8 +731,6 @@ class PlayState extends MusicBeatState
 
 	function startCountdown():Void
 	{
-		appearStaticArrows();
-
 		startedCountdown = true;
 		Conductor.songPosition = 0;
 		Conductor.songPosition -= Conductor.crochet * 5;
@@ -1285,18 +1288,6 @@ class PlayState extends MusicBeatState
 
 			strumLineNotes.add(babyArrow);
 		}
-	}
-
-	private function appearStaticArrows():Void
-	{
-		strumLineNotes.forEach(function(babyArrow:FlxSprite)
-		{
-		});
-	}
-
-	function tweenCamIn():Void
-	{
-		FlxTween.tween(FlxG.camera, {zoom: 1.3}, (Conductor.stepCrochet * 4 / 1000), {ease: FlxEase.elasticInOut});
 	}
 
 	override function openSubState(SubState:FlxSubState)
@@ -3001,22 +2992,19 @@ class PlayState extends MusicBeatState
 		{
 		camGame.setFilters([new ShaderFilter(glowfnf)]);
 		}
-						touhouBG = new FlxSprite(-FlxG.width * FlxG.camera.zoom,
-							-FlxG.height * FlxG.camera.zoom).makeGraphic(FlxG.width * 3, FlxG.height * 3, FlxColor.BLACK);
-						boyfriend.colorTransform.blueOffset = 255;
-						boyfriend.colorTransform.redOffset = 255;
-						boyfriend.colorTransform.greenOffset = 255;
-						dad.colorTransform.blueOffset = 255;
-						dad.colorTransform.redOffset = 255;
-						dad.colorTransform.greenOffset = 255;
-                            gf.colorTransform.blueOffset = 255;
-                            gf.colorTransform.redOffset = 255;
-                            gf.colorTransform.greenOffset = 255;
-						touhouBG.scrollFactor.set();
-						addBehindGF(touhouBG);
-					boyfriend.color = FlxColor.WHITE;
-					dad.color = FlxColor.WHITE;
-					    gf.color = FlxColor.WHITE; 
+		touhouBG.alpha = 1;
+		boyfriend.colorTransform.blueOffset = 255;
+		boyfriend.colorTransform.redOffset = 255;
+		boyfriend.colorTransform.greenOffset = 255;
+		dad.colorTransform.blueOffset = 255;
+		dad.colorTransform.redOffset = 255;
+		dad.colorTransform.greenOffset = 255;
+		gf.colorTransform.blueOffset = 255;
+		gf.colorTransform.redOffset = 255;
+		gf.colorTransform.greenOffset = 255;
+		boyfriend.color = FlxColor.WHITE;
+		dad.color = FlxColor.WHITE;
+		gf.color = FlxColor.WHITE; 
 		Stage.camZoom = 1.4;
 		}
 		});
@@ -3037,18 +3025,18 @@ class PlayState extends MusicBeatState
 		{
 		camGame.setFilters([]);
 		}
-					touhouBG.alpha = 0;
-					touhouBG.kill();
-					touhouBG = null;
-					boyfriend.colorTransform.blueOffset = 0;
-					boyfriend.colorTransform.redOffset = 0;
-					boyfriend.colorTransform.greenOffset = 0;
-					dad.colorTransform.blueOffset = 0;
-					dad.colorTransform.redOffset = 0;
-					dad.colorTransform.greenOffset = 0;
-                        gf.colorTransform.blueOffset = 0;
-                        gf.colorTransform.redOffset = 0;
-                        gf.colorTransform.greenOffset = 0; 
+		touhouBG.alpha = 0;
+		touhouBG.kill();
+		touhouBG = null;
+		boyfriend.colorTransform.blueOffset = 0;
+		boyfriend.colorTransform.redOffset = 0;
+		boyfriend.colorTransform.greenOffset = 0;
+		dad.colorTransform.blueOffset = 0;
+		dad.colorTransform.redOffset = 0;
+		dad.colorTransform.greenOffset = 0;
+		gf.colorTransform.blueOffset = 0;
+		gf.colorTransform.redOffset = 0;
+		gf.colorTransform.greenOffset = 0; 
 		}
 
 		if (curStep == 1728)
